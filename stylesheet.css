@@ -49,3 +49,12 @@ h1 {
     background-color: red;
     cursor: pointer;
 }
+
+#clear-button {
+    margin-left: 20px;
+}
+
+#back-button {
+    padding-top: 4px;
+    padding-bottom: 6px;
+}
