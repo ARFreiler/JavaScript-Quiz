@@ -12,6 +12,7 @@
         <a href="scores.html">View Highscores</a>
       </nav>
     </header>
+    <!-- Pre Quiz Section -->
     <section class="section">
         <h1>JavaScript Quiz: Timed Coding Challenge</h1>
         <p>Test your JavaScript knowledge in this speed quiz!!</p>
@@ -19,6 +20,22 @@
         <p>Your final score is the amount of time you have left. If the timer hits zero, that's an automatic game over.</p>
         <button id="button">Start Quiz</button>
     </section>
+   <!-- Quiz Section -->
+    <section id="quiz-questions" class="hidden quiz-section">
+        <p id="timer">Time: <span id="time-remaining">0</span></p>
+        <h1 id="question">Quiz Question</h1>
+        <ul id="choices"></ul>
+      </section>
+      <!-- Post Quiz Section -->
+      <section id="end" class="quiz-section hidden">
+        <h1 id="end-title">Quiz completed</h1>
+        <p id="score-text">Your score is: <span id="score">0</span></p>
+        <form id="submit-score">
+            <label for="initials">Enter initials:</label>
+            <input type="text" id="initials">
+            <button type="submit">Submit</button>
+            <p id="error-message"></p>
+          </form>
     <script src="main.js"></script>
   </body>
 </html>
