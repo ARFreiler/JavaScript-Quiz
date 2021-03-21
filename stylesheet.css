@@ -50,6 +50,24 @@ h1 {
     cursor: pointer;
 }
 
+/* SCORES.HTML STYLING */
+
+main {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    height: 75%;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+
+th {
+    text-align: left;
+}
+
+/* scores.html buttons */
+
 #clear-button {
     margin-left: 20px;
 }
