@@ -1,7 +1,7 @@
 // Section
 var quizSection = document.querySelectorAll("quiz-section");
 
-// Start
+// Start of Quiz
 var startSection = document.getElementById("start");
 var startButton =document.getElementById("start-button");
 
@@ -14,9 +14,13 @@ var choiceStatus = document.querySelectorAll(".choice-status");
 var correct = document.getElementById("correct");
 var wrong = document.getElementById("wrong");
 
-var end =
-var endTitle =
-var scoreText =
-var submitScore =
-var initials =
-var error = 
+// End of Quiz
+var end = document.getElementById("end");
+var endTitle = document.getElementById("end-title");
+var scoreText = document.getElementById("score-text");
+var score = document.getElementById("score");
+var submitScore = document.getElementById("submit-score");
+var initials = document.getElementById("initials");
+var error = document.getElementById("error-message");
+
+
