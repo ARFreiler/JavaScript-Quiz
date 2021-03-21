@@ -15,7 +15,7 @@ header {
 }
 
 header a {
-    color:blue;
+    color: blue;
     text-decoration: none;
     font-size: 18px;
     padding-left: 10px;
@@ -27,9 +27,18 @@ header a:hover {
 
 h1 {
     font-size: 40px;
-
 }
 
 .section {
     text-align: center;
+}
+
+#button {
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px 5px 10px;
+    margin-top: 20px;
 }
