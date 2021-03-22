@@ -101,6 +101,24 @@ th {
     margin-top: 20px;
 }
 
+ul {
+    list-style-type: none;
+}
+
+ul#choices button {
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+ul#choices button:hover {
+    background-color: red;
+    cursor: pointer;
+}
+
 /* Answer Indicators */
 
 #correct {

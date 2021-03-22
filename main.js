@@ -36,6 +36,8 @@ function startQuiz() {
       document.getElementById("quiz-questions").style.display = "block";
     }
   }
+  startTimer();
+  displayQuestion();
 }
 
 // Runs timer
@@ -48,36 +50,53 @@ function startTimer() {
       span.innerHTML = counter;
     }
     if (counter === 0) {
-      alert("Sorry, you are out of time!");
-      clearInterval(counter);
+        clearInterval(counter);
     }
   }, 1000);
 }
 function start(){
 };
 
-// // Questions Element
-// class Question {
-//   constructor(question, choices, indexOfCorrectChoice) {
-//     this.question = question;
-//     this.choices = choices;
-//     this.indexOfCorrectChoice = indexOfCorrectChoice;
-//     }
-// }
+function displayQuestion() {
+  question.textContent = questionList[currentQuestion].question;
+  displayChoiceList();
+}
 
-// var questionOne = new Question("Commonly used data types DO NOT include: ",
-// ["Strings","Booleans", "Alerts", "Numbers"], 2);
-// var questionTwo = new Question("The condition in an if / else statement is enclosed within _____.",
-// ["Quotes", "Braces", "Parantheses", "Square Brackets"], 2);
-// var questionThree = new Question("Arrays in JavaScript can be used to store ____.",
-// ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], 3);
-// var questionFour = new Question("String values must be enclosed within _____ when being assigned to variables.",
-// ["Commas", "Braces", "Quotes", "Parantheses"], 2);
-// var questionFive = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ",
-// ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
-// var questionList = [questionOne, questionTwo, questionThree, questionFour, questionFive];
+function displayChoiceList() {
+  choices.innerHTML = "";
+  questionList[currentQuestion].choices.forEach(function (answer, index) {
+    var li = document.createElement("li");
+    li.dataset.index = index;
+    var button = document.createElement("button");
+    button.textContent = (index + 1) + ". " + answer;
+    li.appendChild(button);
+    choices.appendChild(li);
+  });
+}
 
-// var currentQuestion = 0;
-// var totalTime = 60;
-// var totalTimeInterval;
-// var choiceStatusTimeout;
+
+// Questions Element
+class Question {
+  constructor(question, choices, indexOfCorrectChoice) {
+    this.question = question;
+    this.choices = choices;
+    this.indexOfCorrectChoice = indexOfCorrectChoice;
+    }
+}
+
+var questionOne = new Question("Commonly used data types DO NOT include: ",
+["Strings","Booleans", "Alerts", "Numbers"], 2);
+var questionTwo = new Question("The condition in an if / else statement is enclosed within _____.",
+["Quotes", "Braces", "Parantheses", "Square Brackets"], 2);
+var questionThree = new Question("Arrays in JavaScript can be used to store ____.",
+["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], 3);
+var questionFour = new Question("String values must be enclosed within _____ when being assigned to variables.",
+["Commas", "Braces", "Quotes", "Parantheses"], 2);
+var questionFive = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ",
+["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
+var questionList = [questionOne, questionTwo, questionThree, questionFour, questionFive];
+
+var currentQuestion = 0;
+var totalTime = 60;
+var totalTimeInterval;
+var choiceStatusTimeout;
