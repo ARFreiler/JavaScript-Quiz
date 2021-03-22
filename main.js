@@ -50,15 +50,8 @@ var error = document.getElementById("error-message");
 // var choiceStatusTimeout;
 
 document.getElementById("start-button").addEventListener("click", startQuiz);
-
-// This worked to hide element
-// function startQuiz() {
-//   var showQuiz = document.getElementById("start");
-//   if (showQuiz.style.display === "block") {
-//     showQuiz.style.display = "none";
-//   }
-//   }
-
+document.getElementById("start-button").addEventListener("click", startTimer);
+// Hides section start and shows section quiz-questions
 function startQuiz() {
   if (document.getElementById("start")) {
     if (document.getElementById("start").style.display == "block") {
@@ -68,9 +61,22 @@ function startQuiz() {
   }
 }
 
+function startTimer() {
+  var counter = 60;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("time-remaining");
+      span.innerHTML = counter;
+    }
+    if (counter === 0) {
+      alert("Sorry, you are out of time!");
+      clearInterval(counter);
+    }
+  }, 1000);
+}
+function start(){
+
+};
 
 
-
-// var showQuestions = document.getElementById("quiz-questions");
-  // if (showQuestions.style.display === "none") {
-  //   showQuestions.style.display = "block";}
