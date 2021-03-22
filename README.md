@@ -32,6 +32,8 @@ Open index.html in Chrome.
 
 [JavaScript Tutorial](https://javascripttutorial.net/)
 
+[JavaScript Info](https://javascript.info/class)
+
 ## Links
 
 ## License
