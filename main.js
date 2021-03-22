@@ -43,3 +43,18 @@ var questionFour = new Question("String values must be enclosed within _____ whe
 var questionFive = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ",
 ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
 var questionList = [questionOne, questionTwo, questionThree, questionFour, questionFive];
+
+var currentQuestion = 0;
+var totalTime = 60;
+var totalTimeInterval;
+var choiceStatusTimeout;
+
+startButton.addEventListener("click", startGame);
+
+function startGame() {
+  showElement(quizQuestions, quizSection);
+
+  displayTime();
+  displayQuestion();
+  startTimer();
+}
