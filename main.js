@@ -23,4 +23,11 @@ var submitScore = document.getElementById("submit-score");
 var initials = document.getElementById("initials");
 var error = document.getElementById("error-message");
 
-
+// Questions Element
+class Question {
+    constructor(question, choices, indexOfCorrectChoice) {
+      this.question = question;
+      this.choices = choices;
+      this.indexOfCorrectChoice = indexOfCorrectChoice;
+    }
+  }
