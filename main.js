@@ -71,7 +71,7 @@ function displayChoiceList() {
     button.textContent = (index + 1) + ". " + answer;
     li.appendChild(button);
     choices.appendChild(li);
-  });
+  }); 
 }
 
 
