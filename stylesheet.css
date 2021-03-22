@@ -76,3 +76,25 @@ th {
     padding-top: 4px;
     padding-bottom: 6px;
 }
+/* 
+/* Show and Hide */
+
+#start {
+    display: block;
+}
+
+#quiz-questions {
+    display: none;
+}
+
+#end {
+    display: none;
+}
+
+#correct {
+    display: none;
+}
+
+#wrong {
+    display: none;
+} */
