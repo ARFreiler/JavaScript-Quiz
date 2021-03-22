@@ -91,6 +91,7 @@ th {
     font-size: 25px;
     font-weight: bold;
     margin-top: 150px;
+    border-bottom: solid black 1px;
 }
 
 #time-remaining {
@@ -98,7 +99,10 @@ th {
 }
 
 #question {
+    font-size: 25px;
     margin-top: 20px;
+    padding-bottom: 30px;
+    border-bottom: solid black 1px;
 }
 
 ul {
