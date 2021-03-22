@@ -76,20 +76,32 @@ th {
     padding-top: 4px;
     padding-bottom: 6px;
 }
-/* 
-/* Show and Hide */
 
-#start {
-    display: block;
+/* QUIZ SECTION */
+.hidden-quiz-section {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 80%;
+    text-align: left;
 }
 
-#quiz-questions {
-    display: none;
+#timer {
+    color: black;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 150px;
 }
 
-#end {
-    display: none;
+#time-remaining {
+    color: blue;
 }
+
+#question {
+    margin-top: 20px;
+}
+
+/* Answer Indicators */
 
 #correct {
     display: none;
@@ -97,4 +109,4 @@ th {
 
 #wrong {
     display: none;
-} */
+}

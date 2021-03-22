@@ -23,14 +23,47 @@ var submitScore = document.getElementById("submit-score");
 var initials = document.getElementById("initials");
 var error = document.getElementById("error-message");
 
+// Event Listeners
+document.getElementById("start-button").addEventListener("click", startQuiz);
+document.getElementById("start-button").addEventListener("click", startTimer);
+// document.getElementById("start-button").addEventListener("click", Question);
+
+// Hides section start and shows section quiz-questions
+function startQuiz() {
+  if (document.getElementById("start")) {
+    if (document.getElementById("start").style.display == "block") {
+      document.getElementById("start").style.display = "none";
+      document.getElementById("quiz-questions").style.display = "block";
+    }
+  }
+}
+
+// Runs timer
+function startTimer() {
+  var counter = 60;
+  setInterval(function() {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("time-remaining");
+      span.innerHTML = counter;
+    }
+    if (counter === 0) {
+      alert("Sorry, you are out of time!");
+      clearInterval(counter);
+    }
+  }, 1000);
+}
+function start(){
+};
+
 // // Questions Element
 // class Question {
-//     constructor(question, choices, indexOfCorrectChoice) {
-//       this.question = question;
-//       this.choices = choices;
-//       this.indexOfCorrectChoice = indexOfCorrectChoice;
+//   constructor(question, choices, indexOfCorrectChoice) {
+//     this.question = question;
+//     this.choices = choices;
+//     this.indexOfCorrectChoice = indexOfCorrectChoice;
 //     }
-//   }
+// }
 
 // var questionOne = new Question("Commonly used data types DO NOT include: ",
 // ["Strings","Booleans", "Alerts", "Numbers"], 2);
@@ -48,35 +81,3 @@ var error = document.getElementById("error-message");
 // var totalTime = 60;
 // var totalTimeInterval;
 // var choiceStatusTimeout;
-
-document.getElementById("start-button").addEventListener("click", startQuiz);
-document.getElementById("start-button").addEventListener("click", startTimer);
-// Hides section start and shows section quiz-questions
-function startQuiz() {
-  if (document.getElementById("start")) {
-    if (document.getElementById("start").style.display == "block") {
-      document.getElementById("start").style.display = "none";
-      document.getElementById("quiz-questions").style.display = "block";
-    }
-  }
-}
-
-function startTimer() {
-  var counter = 60;
-  setInterval(function() {
-    counter--;
-    if (counter >= 0) {
-      span = document.getElementById("time-remaining");
-      span.innerHTML = counter;
-    }
-    if (counter === 0) {
-      alert("Sorry, you are out of time!");
-      clearInterval(counter);
-    }
-  }, 1000);
-}
-function start(){
-
-};
-
-
