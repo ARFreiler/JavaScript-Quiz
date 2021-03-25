@@ -38,6 +38,7 @@ function startQuiz() {
   }
   startTimer();
   displayQuestion();
+  displayChoices();
 }
 
 // Runs timer
@@ -104,10 +105,10 @@ function start() {
 //   ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
 // var questionList = [questionOne, questionTwo, questionThree, questionFour, questionFive];
 
-// var currentQuestion = 0;
-// var totalTime = 60;
-// var totalTimeInterval;
-// var choiceStatusTimeout;
+var currentQuestion = 0;
+var totalTime = 60;
+var totalTimeInterval;
+var choiceStatusTimeout;
 
 /* QUESTIONS ARRAY */
 var questions = [
@@ -136,3 +137,32 @@ var questions = [
   }
 ];
 
+function displayQuestion() {
+  question.textContent = questions[currentQuestion].question
+}
+
+function displayChoices() {
+  var quizAnswer = questions[currentQuestion].choices;
+  for ( i = 0; i < quizAnswer.length; i++){
+    var listItem = document.createElement("li");
+    listItem.textContent = quizAnswer[i];
+    choices.appendChild(listItem);
+    console.log(quizAnswer[i]);
+    console.log(i)
+  }
+}
+
+for ( i = 0; i < questions.length; i++) {
+  console.log(questions[i]);
+}
+
+// choices.forEach(index(choices)) {
+//   console.log(choices);
+// };
+
+var questionChoice = [question, choices];
+console.log(questions[currentQuestion].choices);
+
+var questionObjects = {
+  
+}
