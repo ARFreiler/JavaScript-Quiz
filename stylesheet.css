@@ -134,3 +134,8 @@ ul#choices button:hover {
 #wrong {
     display: none;
 }
+
+li {
+    background-color: blue;
+    color: white;
+}

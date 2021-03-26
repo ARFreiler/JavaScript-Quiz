@@ -144,13 +144,23 @@ function displayQuestion() {
 function displayChoices() {
   var quizAnswer = questions[currentQuestion].choices;
   for ( i = 0; i < quizAnswer.length; i++){
-    var listItem = document.createElement("li");
+    // var listItem = document.createElement("li");
+    // listItem.textContent = quizAnswer[i];
+    // choices.appendChild(listItem);
+    var listItem = document.createElement("button");
     listItem.textContent = quizAnswer[i];
     choices.appendChild(listItem);
     console.log(quizAnswer[i]);
     console.log(i)
+    // var choiceButton = document.createElement("button");
+    // choiceButton.textContent = listItem;
+    // listItem.appendChild(choiceButton);
   }
 }
+
+
+    
+    // 
 
 for ( i = 0; i < questions.length; i++) {
   console.log(questions[i]);
