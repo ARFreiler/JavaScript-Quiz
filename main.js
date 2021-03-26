@@ -39,6 +39,7 @@ function startQuiz() {
   startTimer();
   displayQuestion();
   displayChoices();
+  checkAnswer();
 }
 
 // Runs timer
@@ -127,15 +128,18 @@ var questions = [
     choices: ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"],
     answer: "All of the above"
   },
-  {question: "String values must be enclosed within _____ when being assigned to variables.",
-   choices: ["Commas", "Braces", "Quotes", "Parantheses"],
-   answer: "Quotes"
+  {
+    question: "String values must be enclosed within _____ when being assigned to variables.",
+    choices: ["Commas", "Braces", "Quotes", "Parantheses"],
+    answer: "Quotes"
   },
-  {question: "A very useful tool used during development and debugging for printing content to the debugger is: ",
-   choices: ["JavaScript", "Terminal/Bash", "For Loops", "console.log"],
-   answer: "console.log"
+  {
+    question: "A very useful tool used during development and debugging for printing content to the debugger is: ",
+    choices: ["JavaScript", "Terminal/Bash", "For Loops", "console.log"],
+    answer: "console.log"
   }
 ];
+
 
 function displayQuestion() {
   question.textContent = questions[currentQuestion].question
@@ -143,36 +147,43 @@ function displayQuestion() {
 
 function displayChoices() {
   var quizAnswer = questions[currentQuestion].choices;
-  for ( i = 0; i < quizAnswer.length; i++){
+  for (i = 0; i < quizAnswer.length; i++) {
     // var listItem = document.createElement("li");
     // listItem.textContent = quizAnswer[i];
     // choices.appendChild(listItem);
+
+    /* Creates button for Ul */
     var listItem = document.createElement("button");
     listItem.textContent = quizAnswer[i];
     choices.appendChild(listItem);
-    console.log(quizAnswer[i]);
-    console.log(i)
-    // var choiceButton = document.createElement("button");
-    // choiceButton.textContent = listItem;
-    // listItem.appendChild(choiceButton);
+
+    // var choice = [currentQuestion.choices];
+    // var answer = [currentQuestion.answer];
+    // listItem.onclick = function() {
+    //   if (choice === answer) {
+    //     alert("yay");
+    //   } else alert("boo");
+    //   }
+
+
   }
+
+  console.log(quizAnswer[i]);
+  console.log(i)
+
+  // var choiceButton = document.createElement("button");
+  // choiceButton.textContent = listItem;
+  // listItem.appendChild(choiceButton);
 }
 
-
-    
-    // 
-
-for ( i = 0; i < questions.length; i++) {
+for (i = 0; i < questions.length; i++) {
   console.log(questions[i]);
 }
 
-// choices.forEach(index(choices)) {
-//   console.log(choices);
-// };
 
 var questionChoice = [question, choices];
 console.log(questions[currentQuestion].choices);
 
-var questionObjects = {
-  
-}
+// function checkAnswer(answer) {
+//   if (answer === questions)
+// }

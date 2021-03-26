@@ -108,6 +108,11 @@ th {
 ul {
     list-style-type: none;
     padding: 0%;
+    display: flex;
+    flex-direction: column;
+    width:fit-content;
+    
+    
     
 }
 
@@ -136,6 +141,9 @@ ul#choices button:hover {
 }
 
 li {
+    display: flex;
+    flex-direction: column;
     background-color: blue;
     color: white;
+    
 }
