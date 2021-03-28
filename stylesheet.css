@@ -132,18 +132,9 @@ ul#choices button:hover {
 
 /* Answer Indicators */
 
- #correct {
-    display: none;
+.choice-status-hidden {
+    margin-left: 100px;
+    color: blue;
+    font-weight: bold;
+    font-size: 20px;
 }
-
-#wrong {
-    display: none;
-} 
-
-/* li {
-    display: flex;
-    flex-direction: column;
-    background-color: blue;
-    color: white;
-    
-} */

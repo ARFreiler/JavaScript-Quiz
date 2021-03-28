@@ -69,23 +69,18 @@ function displayQuestion() {
     currentQuestion++
 }
 
-function displayChoices() {
-      var currentChoices = document.getElementById("choices")
-      currentChoices.innerHTML = questions[currentQuestion].choices;
-}
-
 /* Lagging Choice Index */
-// function displayChoices() {
-//     choices.innerHTML = "";
-//     questions[currentQuestion].choices.forEach(function (answer,index) {
-//         var listItem = document.createElement("li");
-//         listItem.dataset.index = index;
-//         var button = document.createElement("button");
-//         button.textContent = (index + 1) + ". " + answer;
-//         listItem.appendChild(button);
-//         choices.appendChild(listItem);
-//     })
-// }
+function displayChoices() {
+    choices.innerHTML = "";
+    questions[currentQuestion].choices.forEach(function (answer,index) {
+        var listItem = document.createElement("li");
+        listItem.dataset.index = index;
+        var button = document.createElement("button");
+        button.textContent = (index + 1) + ". " + answer;
+        listItem.appendChild(button);
+        choices.appendChild(listItem);
+    })
+}
 
 choices.addEventListener("click", displayQuestion);
 choices.addEventListener("click", displayChoices);

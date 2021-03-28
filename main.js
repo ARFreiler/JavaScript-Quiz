@@ -43,22 +43,7 @@ function startQuiz() {
   // checkAnswer();
 }
 
-// Runs timer
-function startTimer() {
-  var counter = 60;
-  setInterval(function () {
-    counter--;
-    if (counter >= 0) {
-      span = document.getElementById("time-remaining");
-      span.innerHTML = counter;
-    }
-    if (counter === 0) {
-      clearInterval(counter);
-    }
-  }, 1000);
-}
-function start() {
-};
+
 
 var currentQuestion = 0;
 var totalTime = 60;
@@ -94,9 +79,22 @@ var questions = [
   }
 ];
 
-
-
-
+// Runs timer
+function startTimer() {
+  var counter = 60;
+  setInterval(function () {
+    counter--;
+    if (counter >= 0) {
+      span = document.getElementById("time-remaining");
+      span.innerHTML = counter;
+    }
+    if (counter === 0) {
+      clearInterval(counter);
+    }
+  }, 1000);
+}
+function start() {
+};
 
 function displayQuestion() {
   question.textContent = questions[currentQuestion].question
@@ -105,9 +103,6 @@ function displayQuestion() {
 function displayChoices() {
   var quizAnswer = questions[currentQuestion].choices;
   for (i = 0; i < quizAnswer.length; i++) {
-
-  
-
     /* Creates button for Ul */
     var listItem = document.createElement("button");
     listItem.textContent = quizAnswer[i];
@@ -115,84 +110,19 @@ function displayChoices() {
 
     listItem.onclick = function (e) {
       var userAnswerText = e.target.textContent;
-      console.log(userAnswerText);
+      // console.log(userAnswerText);
       var actualAnswer = questions[currentQuestion].answer;
-      console.log(actualAnswer);
+      // console.log(actualAnswer);
       if (actualAnswer === userAnswerText) {
         console.log("yay");
         correct.innerHTML = "Correct!"
-        var nextQuestion = question.textCo
-      //  choiceStatus.innerHTML = "Correct!";   
       } else {
-        console.log("boo")
-
-        // choiceStatus.innerHTML = "Wrong!";
+        console.log("boo");
+        wrong.innerHTML = "Wrong!";
       }
     }
   }
-  console.log(quizAnswer[i]);
-  console.log(i)
+  // console.log(quizAnswer[i]);
+  // console.log(i)
 }
 
-
-
-// function checkAnswer(answer) {
-//   if (answer == questions[currentQuestion].answer) {
-//     alert('yes');
-//   }
-// }
-
-
-
-// function nextQuestion() {
-
-// }
-
-for (i = 0; i < questions.length; i++) {
-  console.log(questions[i]);
-}
-
-document.addEventListener("click", currentQuestion[choices]);
-// console.log("click");
-// function userChoice() {
-//   listItem.onclick = function() {
-
-//   }
-// }
-
-// var questionChoice = [question, choices];
-// console.log(questions[currentQuestion].choices);
-
-// var answer = document.querySelectorAll("li");
-// console.log(answer);
-// onclick.
-
-
-
- // if (quizAnswer = currentQuestion.answer) {
-      //   alert("yay");
-      // } else alert("boo");
-
-      // for ( i = 0; i < quizAnswer.length; i++){
-      //   if (questions.choices[i] === questions.answer);
-      //   alert("yes");
-      // }
-
-
-
-
-
-       // var listItem = document.createElement("li");
-    // listItem.textContent = quizAnswer[i];
-    // choices.appendChild(listItem);
-
-
-    // function showCorrect() {
-    //   var correct = document.getElementById("correct");
-    //   correct.setAttribute("display", "block");
-    // }
-    
-    // function showWrong() {
-    //   var wrong = document.getElementById("wrong");
-    //   wrong.setAttribute.style = "visible";
-    // }
