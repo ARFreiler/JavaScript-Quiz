@@ -39,6 +39,7 @@ function startQuiz() {
   startTimer();
   displayQuestion();
   displayChoices();
+  // hideStatus();
   // checkAnswer();
 }
 
@@ -58,53 +59,6 @@ function startTimer() {
 }
 function start() {
 };
-
-// // Displays quiz question
-// function displayQuestion() {
-//   question.textContent = questionList[currentQuestion].question;
-//   displayChoiceList();
-// }
-
-// // Displays ul of answer choices
-// function displayChoiceList() {
-//   choices.innerHTML = "";
-//   questionList[currentQuestion].choices.forEach(function (answer, index) {
-//     var li = document.createElement("li");
-//     li.dataset.index = index;
-//     var button = document.createElement("button");
-//     button.textContent = (index + 1) + ". " + answer;
-//     li.appendChild(button);
-//     choices.appendChild(li);
-//   });
-// }
-
-
-
-// function confirmChoice(event) {
-//   var userChoice = parseInt(event.target.parentElement.dataset.index);
-// }
-
-// // Questions Element
-// class Question {
-//   constructor(question, choices, indexOfCorrectChoice) {
-//     this.question = question;
-//     this.choices = choices;
-//     this.indexOfCorrectChoice = indexOfCorrectChoice;
-//   }
-// }
-
-// // Quiz questions
-// var questionOne = new Question("Commonly used data types DO NOT include: ",
-//   ["Strings", "Booleans", "Alerts", "Numbers"], 2);
-// var questionTwo = new Question("The condition in an if / else statement is enclosed within _____.",
-//   ["Quotes", "Braces", "Parantheses", "Square Brackets"], 2);
-// var questionThree = new Question("Arrays in JavaScript can be used to store ____.",
-//   ["Numbers and Strings", "Other arrays", "Booleans", "All of the above"], 3);
-// var questionFour = new Question("String values must be enclosed within _____ when being assigned to variables.",
-//   ["Commas", "Braces", "Quotes", "Parantheses"], 2);
-// var questionFive = new Question("A very useful tool used during development and debugging for printing content to the debugger is: ",
-//   ["JavaScript", "Terminal/Bash", "For Loops", "console.log"], 3);
-// var questionList = [questionOne, questionTwo, questionThree, questionFour, questionFive];
 
 var currentQuestion = 0;
 var totalTime = 60;
@@ -140,10 +94,9 @@ var questions = [
   }
 ];
 
-function hideStatus() {
-  var choiceStatus = document.getElementsByClassName("choice-status-hidden");
-  choiceStatus.style.display = "none";
-}
+
+
+
 
 function displayQuestion() {
   question.textContent = questions[currentQuestion].question
@@ -167,10 +120,13 @@ function displayChoices() {
       console.log(actualAnswer);
       if (actualAnswer === userAnswerText) {
         console.log("yay");
-       choiceStatus.innerHTML = "Correct!";   
+        correct.innerHTML = "Correct!"
+        var nextQuestion = question.textCo
+      //  choiceStatus.innerHTML = "Correct!";   
       } else {
         console.log("boo")
-        choiceStatus.innerHTML = "Wrong!";
+
+        // choiceStatus.innerHTML = "Wrong!";
       }
     }
   }
@@ -229,3 +185,14 @@ document.addEventListener("click", currentQuestion[choices]);
        // var listItem = document.createElement("li");
     // listItem.textContent = quizAnswer[i];
     // choices.appendChild(listItem);
+
+
+    // function showCorrect() {
+    //   var correct = document.getElementById("correct");
+    //   correct.setAttribute("display", "block");
+    // }
+    
+    // function showWrong() {
+    //   var wrong = document.getElementById("wrong");
+    //   wrong.setAttribute.style = "visible";
+    // }
