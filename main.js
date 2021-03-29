@@ -39,11 +39,7 @@ function startQuiz() {
   startTimer();
   displayQuestion();
   displayChoices();
-  // hideStatus();
-  // checkAnswer();
-}
-
-
+ }
 
 var currentQuestion = 0;
 var totalTime = 60;
@@ -97,12 +93,24 @@ function start() {
 };
 
 function displayQuestion() {
-  question.textContent = questions[currentQuestion].question
+  question.innerHTML = questions[currentQuestion].question;
+  for ( var i = 0; i < questions[currentQuestion].question.length; i ++) {
+    // var visibleQuestion = questions[currentQuestion].question[i];
+    // var newButton = document.createElement("button");
+    // choices.appendChild(newButton);
+    // newButton.textContent = questions[currentQuestion].choices;
+  }
 }
 
+// function displayQuestion() {
+//   question.textContent = questions[currentQuestion].question;
+  
+// }
+
 function displayChoices() {
-  var quizAnswer = questions[currentQuestion].choices;
+  var quizAnswer = questions[currentQuestion].choices
   for (i = 0; i < quizAnswer.length; i++) {
+    
     /* Creates button for Ul */
     var listItem = document.createElement("button");
     listItem.textContent = quizAnswer[i];
@@ -110,19 +118,14 @@ function displayChoices() {
 
     listItem.onclick = function (e) {
       var userAnswerText = e.target.textContent;
-      // console.log(userAnswerText);
       var actualAnswer = questions[currentQuestion].answer;
-      // console.log(actualAnswer);
       if (actualAnswer === userAnswerText) {
-        console.log("yay");
         correct.innerHTML = "Correct!"
+        
       } else {
-        console.log("boo");
         wrong.innerHTML = "Wrong!";
       }
     }
   }
-  // console.log(quizAnswer[i]);
-  // console.log(i)
 }
 

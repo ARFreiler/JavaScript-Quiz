@@ -64,6 +64,25 @@ var questions = [
     }
 ];
 
+function displayTime() {
+    timeRemaining.textContent = totalTime;
+}
+
+function startTimer() {
+    totalTimeInterval = setInterval(function () {
+        totalTime--;
+        displayTime();
+        checkTime();
+    }, 1000);
+}
+
+function checkTime() {
+    if (totalTime <= 0) {
+      totalTime = 0;
+      endGame();
+    }
+  }
+
 function displayQuestion() {
     question.textContent = questions[currentQuestion].question;
     currentQuestion++
@@ -72,13 +91,22 @@ function displayQuestion() {
 /* Lagging Choice Index */
 function displayChoices() {
     choices.innerHTML = "";
-    questions[currentQuestion].choices.forEach(function (answer,index) {
+    questions[currentQuestion].choices.forEach(function(answer, index) {
         var listItem = document.createElement("li");
         listItem.dataset.index = index;
         var button = document.createElement("button");
         button.textContent = (index + 1) + ". " + answer;
         listItem.appendChild(button);
         choices.appendChild(listItem);
+        listItem.onclick = function(e){
+            var userAnswerText = e.target.textContent;
+            var actualAnswer = questions[currentQuestion].answer;
+            if (actualAnswer === userAnswerText) {
+                correct.innerHTML = "Correct!"
+            } else {
+              wrong.innerHTML = "Wrong!";
+            }
+        }
     })
 }
 
@@ -94,5 +122,6 @@ function startQuiz() {
     }
     displayQuestion();
     displayChoices();
+    startTimer();
 }
 
