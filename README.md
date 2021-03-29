@@ -40,6 +40,12 @@ Open index.html in Chrome.
 
 ## Links
 
+[Repository](https://github.com/ARFreiler/JavaScript-Quiz)
+
+[Deployed Page](https://arfreiler.github.io/JavaScript-Quiz/)
+
+![](https://user-images.githubusercontent.com/75546695/112775501-0f42ad00-900b-11eb-9472-89a581bdd566.png)
+
 ## License
 
 The MIT License (MIT) Copyright © 2021 Ashleigh Freiler
